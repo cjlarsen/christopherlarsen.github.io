@@ -9,6 +9,7 @@ body {
     justify-content: center;
     height: 100%;
     align-content: center;
+    font-family: "Work Sans", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .container-item {
@@ -17,10 +18,29 @@ body {
     padding: 20px;
     background: #fff;
     border: solid 1px #000;
-} 
+}
+
+.container-item h1 {
+    font-size: 94px;
+    font-weight: bold;
+    margin: 0px;
+    letter-spacing: -4px;
+    line-height: 85px;
+    text-align: end;
+}
+
+.container-item p {
+    margin-top: 10px;
+    letter-spacing: -1px;
+    text-align: start;
+    line-height: 30px;
+    font-weight: medium;
+    font-size: 18px;
+}
 
 .resulinks {
-  margin-top: 25px; 
+    text-align: end;
+    margin-top: 25px; 
 }
 .resulinks .soc {
     display: block;
