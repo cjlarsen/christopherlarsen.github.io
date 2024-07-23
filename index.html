@@ -9,8 +9,7 @@
         </style>  
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <style>
-        @media only screen  
-        and (max-device-width : 736px) {
+        @media (hover: none) {
             body {
                 background: #000;
                 background-repeat: repeat;
@@ -18,12 +17,27 @@
                 background-attachment: fixed;
                 background-size: cover;
             }
+
+            .container-item {
+                max-width: 700px;
+            }
+
+            .container-item h1 {
+                font-size: 40px;
+
+            }
+
+            .container-item p {
+                font-size: 20px;
+            }
+
         }
         </style>
-
+        <script src="js/three.r92.min.js"></script>
+        <script src="js/vanta.waves.min.js"></script>
     </head>
 
-    <body>
+    <body id="waves-container">
         <div class="container">
             <div class="container-item">
                 <header>
@@ -66,4 +80,13 @@
             </div>
         </div>
     </body>
+	<script>
+		VANTA.WAVES({
+  			el: "#waves-container",
+  			color: 0x222222,
+  			waveHeight: 15,
+  			shininess: 20,
+  			waveSpeed: 0.5
+		})
+	</script>	
 </html>
