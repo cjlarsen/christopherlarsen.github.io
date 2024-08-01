@@ -12,7 +12,6 @@ body {
     height: 100%;
     align-content: center;
     font-family: "Work Sans", "Helvetica Neue", "Arial", sans-serif;
-    filter: drop-shadow(0px 0px 14px #000000);
 }
 
 .container-item {
@@ -65,13 +64,19 @@ body {
   color: #9cf7ff;
   fill: #9cf7ff;
   height: 50px;
-  width: 50px; }
-  .resulinks .soc a svg {
+  width: 50px; 
+}
+
+.resulinks .soc a svg {
     height: 100%;
-    width: 100%; }
-  .resulinks .soc a a:hover, .resulinks .soc a svg:hover {
+    width: 100%; 
+}
+
+.resulinks .soc a a:hover, .resulinks .soc a svg:hover {
     color: #ccc;
-    fill: #ccc; }
+    fill: #ccc; 
+}
+
 .resulinks .soc em {
   font-size: 14px;
   line-height: 1.5;
@@ -80,4 +85,5 @@ body {
   top: 50%;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0; 
+}
