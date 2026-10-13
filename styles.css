@@ -258,6 +258,51 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline
 .earlier-org { flex: 0 0 220px; font-weight: 600; }
 .earlier .secondary { flex: 1 1 360px; min-width: 0; }
 
+/* Stills of older web work under the list. The source images are 16:9
+   with black letterbox bars, so they are cropped to a shallower frame. */
+.earlier-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; padding-top: 40px; }
+.earlier-shots figure { min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.earlier-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 32 / 15;
+  object-fit: cover;
+  background: var(--ph);
+  border: 1px solid var(--hair);
+}
+.earlier-shots .crop-top { object-position: top; }
+.earlier-shots a { display: block; cursor: zoom-in; }
+.earlier-shots a:hover img { border-color: var(--hover); }
+.earlier-shots figcaption { letter-spacing: 0.04em; }
+.earlier-shots figcaption span { display: block; }
+@media (max-width: 548px) {
+  .earlier-shots { grid-template-columns: 1fr; }
+}
+
+/* Larger view of a still, opened by gallery.js. It is always dark (the
+   dialog carries data-theme="dark") so the letterbox bars in the source
+   images disappear into it. */
+.lightbox {
+  width: min(960px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  border: 1px solid var(--hair);
+  background: #000;
+  color: var(--ink);
+}
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.8); }
+.lightbox img { display: block; width: 100%; height: auto; }
+.lightbox-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  letter-spacing: 0.04em;
+}
+
 
 .about-content {
   flex: 999 1 640px;

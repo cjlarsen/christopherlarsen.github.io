@@ -3,8 +3,10 @@
 Personal portfolio site for Christopher Larsen ("Ghost"), a Dallas-based iOS engineer and
 technical lead (Southwest Airlines; previously American Airlines, Overhead Door, Bioworld,
 Cratebind, Vimeo). The site supports a move toward Staff / Principal iOS roles, with a
-specialty in on-device AI and a secondary design-engineering angle (he trained as an
-illustrator at FIT before switching to software).
+specialty in on-device AI and a secondary design-engineering angle (he studied computer
+science first, then went to art school at FIT, where graphic design fed into his web
+design and development work before iOS). Don't say he "trained as an illustrator before
+writing code" — the computer science came first.
 
 Plain static site: `index.html`, `styles.css`, `theme.js`, `gallery.js`. No framework, no build step.
 Keep it that way unless asked.
@@ -70,8 +72,8 @@ Color decisions he made (keep them):
   It does **not** have an AI feature yet — don't describe it as AI-powered.
 - The headline and About text currently mention on-device AI. He may soften this until
   the AI feature ships in Azimuth; ask before changing it.
-- Placeholders still to fill (search for `[`): Southwest and American case studies,
-  and the Overhead Door one-liner in Earlier work.
+- No text placeholders remain. The Southwest, American, and Vimeo rows still link to `#`
+  because there are no case study pages yet.
 - `resume.pdf` is exported from his résumé design and dropped into this folder; the
   Résumé buttons link to it.
 

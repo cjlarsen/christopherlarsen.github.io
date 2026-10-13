@@ -39,3 +39,36 @@
     render();
   });
 })();
+
+// Older-work stills: open a larger version in a dialog. Without this
+// script the links just open the image file.
+(function () {
+  var links = document.querySelectorAll('.earlier-shots a');
+  if (!links.length || !window.HTMLDialogElement) return;
+
+  var dialog = document.createElement('dialog');
+  dialog.className = 'lightbox';
+  dialog.setAttribute('data-theme', 'dark');
+  dialog.innerHTML = '<img alt="">' +
+    '<div class="lightbox-bar mono"><span class="lightbox-caption"></span>' +
+    '<button type="button" class="shots-btn">Close</button></div>';
+  document.body.appendChild(dialog);
+
+  var image = dialog.querySelector('img');
+  var caption = dialog.querySelector('.lightbox-caption');
+
+  Array.prototype.forEach.call(links, function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var title = link.parentNode.querySelector('figcaption').firstChild;
+      image.src = link.href;
+      image.alt = link.querySelector('img').alt;
+      caption.textContent = title ? title.textContent.trim() : '';
+      dialog.showModal();
+    });
+  });
+
+  dialog.querySelector('button').addEventListener('click', function () { dialog.close(); });
+  // A click on the backdrop lands on the dialog element itself.
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+})();
