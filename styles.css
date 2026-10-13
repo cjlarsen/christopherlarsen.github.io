@@ -95,7 +95,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; }
 .nav a { text-decoration: none; padding: 12px 0; }
 
-.theme-toggle {
+.theme-toggle, .shots-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -110,7 +110,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline
   letter-spacing: inherit;
   cursor: pointer;
 }
-.theme-toggle:hover { color: var(--hover); border-color: var(--hover); }
+.theme-toggle:hover, .shots-btn:hover { color: var(--hover); border-color: var(--hover); }
 .icon-sun { display: none; }
 [data-theme="dark"] .icon-sun { display: inline; }
 [data-theme="dark"] .icon-moon { display: none; }
@@ -186,6 +186,67 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline
 .case:hover .case-title { color: var(--hover); }
 .case-meta { flex: 0 0 200px; line-height: 1.7; letter-spacing: 0.04em; }
 
+/* A row with screenshots: the gallery sits under the link, lines up with
+   the case title, and carries the row's bottom rule. */
+.case-media { padding-bottom: 28px; border-bottom: 0; }
+.shots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+  padding: 0 0 40px 80px;
+  border-bottom: 1px solid var(--ink);
+}
+/* Line-drawn phone. The one place corners are rounded: it is a drawing
+   of a device, not a button or card. */
+.phone {
+  flex: 0 0 auto;
+  width: 280px;
+  max-width: 100%;
+  padding: 9px;
+  border: 1.5px solid var(--ink);
+  border-radius: 46px;
+}
+.phone-screen {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  aspect-ratio: 640 / 1386;
+  background: #000;
+  border-radius: 36px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.phone-screen::-webkit-scrollbar { display: none; }
+.phone-screen:focus-visible { outline: 2px solid var(--hover); outline-offset: 3px; }
+.phone-screen li { flex: 0 0 100%; scroll-snap-align: start; }
+.phone-screen img { display: block; width: 100%; height: auto; }
+.shots-side {
+  flex: 1 1 200px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  letter-spacing: 0.04em;
+}
+.shots-side[hidden] { display: none; }
+.shots-status { margin: 0; }
+.shots-caption { display: block; }
+.shots-nav { display: flex; gap: 12px; }
+.shots-btn { min-width: 72px; justify-content: center; }
+.shots-btn:disabled { color: var(--muted); border-color: var(--hair); cursor: default; }
+
+/* Below this width the case title wraps under its number, so the
+   gallery moves to the left edge with it. */
+@media (max-width: 548px) {
+  .shots { padding-left: 0; }
+}
+
 .earlier {
   display: flex;
   flex-wrap: wrap;
@@ -256,6 +317,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline
 .footer-links a { padding: 12px 0; }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html, .phone-screen { scroll-behavior: auto; }
   body, .site-footer { transition: none; }
 }

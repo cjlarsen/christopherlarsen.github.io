@@ -6,7 +6,7 @@ Cratebind, Vimeo). The site supports a move toward Staff / Principal iOS roles, 
 specialty in on-device AI and a secondary design-engineering angle (he trained as an
 illustrator at FIT before switching to software).
 
-Plain static site: `index.html`, `styles.css`, `theme.js`. No framework, no build step.
+Plain static site: `index.html`, `styles.css`, `theme.js`, `gallery.js`. No framework, no build step.
 Keep it that way unless asked.
 
 ## Design direction — "Swiss serif"
@@ -20,6 +20,11 @@ Keep it that way unless asked.
   nav, buttons, and metadata. Both loaded from Google Fonts.
 - Square corners everywhere (no rounded buttons or cards). No gradients, no shadows,
   no emoji.
+- Exception to square corners: the line-drawn phone around the Azimuth screenshot gallery
+  (row 1.3). It is a drawing of a device, not a button or card. Screenshots live in
+  `imgs/azimuth/` (PNG originals plus the 640px JPEGs the page uses); the app is dark mode
+  only, so there is one set for both themes. `gallery.js` only adds the Prev / Next buttons
+  and counter; swiping works without it.
 - The ghost mark (inline SVG) is the logo and favicon. It belongs on the website only —
   he removed it from the résumé.
 - The About section shows his painting "Bruiser" (`painting.jpg`). It sits beside the

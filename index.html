@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="theme.js" defer></script>
+  <script src="gallery.js" defer></script>
 </head>
 <body>
   <div class="page">
@@ -91,7 +92,7 @@
                 <div class="muted">iOS Engineer</div>
               </div>
             </a>
-            <a class="case" href="https://apps.apple.com/us/app/azimuth-finance/id6773539916">
+            <a class="case case-media" href="https://apps.apple.com/us/app/azimuth-finance/id6773539916">
               <span class="case-num mono accent-sm">1.3</span>
               <div class="case-main">
                 <span class="case-title">A wealth tracker for FIRE and Boglehead investors</span>
@@ -102,6 +103,22 @@
                 <div class="muted">Side project · App Store</div>
               </div>
             </a>
+            <div class="shots" data-gallery>
+              <div class="phone">
+                <ul class="phone-screen" tabindex="0" aria-label="Azimuth Finance screenshots">
+                  <li data-caption="Portfolio"><img src="imgs/azimuth/01-portfolio-home.jpg" width="640" height="1386" alt="Azimuth Finance portfolio screen: a total of $421,936.93 above a line chart with time ranges from one day to max, followed by cash accounts with their balances and APY." loading="lazy"></li>
+                  <li data-caption="Holdings by account"><img src="imgs/azimuth/02-stock-account.jpg" width="640" height="1386" alt="Azimuth Finance holdings grouped by account type: a taxable brokerage account listing each stock with its share count, price, value, and daily change, then a tax-deferred IRA." loading="lazy"></li>
+                  <li data-caption="FI tracker"><img src="imgs/azimuth/03-fi-tracker.jpg" width="640" height="1386" alt="Azimuth Finance financial independence tracker: 24.10 years to financial independence, a progress ring at 5 percent, the income, savings, and return assumptions, and a net worth projection chart." loading="lazy"></li>
+                </ul>
+              </div>
+              <div class="shots-side mono" hidden>
+                <p class="shots-status" aria-live="polite"><span class="shots-current accent-sm">01</span> / 03 <span class="shots-caption muted">Portfolio</span></p>
+                <div class="shots-nav">
+                  <button type="button" class="shots-btn" data-dir="prev" aria-label="Previous screenshot">Prev</button>
+                  <button type="button" class="shots-btn" data-dir="next" aria-label="Next screenshot">Next</button>
+                </div>
+              </div>
+            </div>
             <a class="case" href="#">
               <span class="case-num mono accent-sm">1.4</span>
               <div class="case-main">
