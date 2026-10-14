@@ -1,321 +1,197 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Christopher Larsen :: Mobile and Web Developer</title>
-	<link rel="shortcut icon" href="/favicon.ico">
-	<meta name="Description" content="Welcome to the website of Christopher Larsen, a mobile and web developer." />
-	<meta name="Keywords" content="Christopher Larsen, iOS Development, Mobile Applications, HTML5, CSS3, Web Development, Mobile Development" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Larsen — iOS Engineer &amp; Technical Lead</title>
+  <meta name="description" content="Christopher Larsen is a staff-level iOS engineer and technical lead in Dallas, TX.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/three.r92.min.js"></script>
-	<script src="js/vanta.waves.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
-	
-	<style>
-	@media only screen  
-	and (max-device-width : 736px) {
-		
-		body {
-			background: #000;
-			background-image: url(../img/bg.png);
-			background-repeat: repeat;
-			background-position: bottom center;
-			background-attachment: fixed;
-			background-size: cover;
-		}
+  <!-- Set the theme before first paint so there is no flash of the wrong mode. -->
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 
-		.main .content .gallery {
-			width: 100%;
-			float: none;
-			}
-
-		.main .content .description {
-			width: 100%;
-			float: none;
-			}
-		}
-	</style>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+  <script src="gallery.js" defer></script>
 </head>
-
 <body>
-<div id="main">
-	<div id= "name-container">
-		<div class= "name">
-			<h1>Christopher Larsen</h1>
+  <div class="page">
+    <div class="wrap">
 
-			<div class="resulinks">
-				<ul class="soc">
-					<li>
-						<a href="https://github.com/cjlarsen" class="github" target="_blank" title="GitHub">
-							<svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/>
-							</svg>
-							<!--[if lt IE 9]><em>GitHub</em><![endif]-->
-						</a>
-					</li>
+      <header class="site-header">
+        <a href="#top" class="brand">
+          <svg class="ghost" width="36" height="36" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 32V14a12 12 0 0 1 24 0v18l-4-3-4 3-4-3-4 3-4-3z"/><circle cx="15" cy="16" r="1.5" fill="currentColor"/><circle cx="25" cy="16" r="1.5" fill="currentColor"/></svg>
+          <span>Christopher Larsen</span>
+        </a>
+        <nav class="nav mono" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+            <span class="theme-toggle-label">Dark</span>
+          </button>
+        </nav>
+      </header>
 
-					<li>
-					 	<a href="http://www.linkedin.com/in/christopherlarsen" target="_blank" class="linkedin" title="LinkedIn">
-					 		<svg viewBox="0 0 512 512"><path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"/>
-					 		</svg>
-					 		<!--[if lt IE 9]><em>LinkedIn</em><![endif]-->
-					 	</a>
-					</li>
-					
-					<li class="email">
-						<a href="mailto:chris@christopherlarsen.com?Subject=Contact%20via%20website" target="_blank" title="Email">
-							<svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/>
-							</svg>
-							<!--[if lt IE 9]><em>Email</em><![endif]-->
-						</a>
-					</li>
+      <main>
+        <section id="top" class="hero">
+          <div class="hero-meta mono">
+            <div class="accent-sm">iOS Tech Lead</div>
+            <div>Dallas, Texas</div>
+            <div class="muted">Est. 2010</div>
+          </div>
+          <h1><span class="nowrap">Staff level</span> iOS engineer building <span class="nowrap">local AI</span> and <em class="accent">well crafted</em> mobile experiences.</h1>
+        </section>
 
-				</ul>
-			</div>
-		</div>
-	</div>
-	
+        <section class="intro">
+          <div class="label-col" aria-hidden="true"></div>
+          <div class="intro-body">
+            <p class="lede">Ten years shipping apps people use every day, from Vimeo to airline apps at American and Southwest. Before iOS, I studied computer science and then art, and worked in web design and development.</p>
+            <div class="actions">
+              <a href="#work" class="btn btn-solid mono">See the work</a>
+            </div>
+          </div>
+        </section>
 
-	<div class="content">
-		
-		<div class="work-experience">
-			<div class="container">
-				<div class="section-title">
-					<h2>Jobs and Projects</h2>
-					<div class="line">&nbsp;</div>
-				</div>
-			</div>
+        <section id="work" class="section">
+          <h2 class="section-label mono"><span class="accent-sm">01</span> Selected work</h2>
+          <div class="section-body">
+            <a class="case" href="https://apps.apple.com/us/app/southwest-airlines/id344542975" target="_blank" rel="noopener">
+              <span class="case-num mono accent-sm">1.1</span>
+              <div class="case-main">
+                <span class="case-title">The seat map behind Southwest's first assigned seating</span>
+                <span class="secondary">Dev lead on the introduction of the seat map in the iOS app, with a part in its architecture decisions. Pushed for generating the API layer from OpenAPI, then maintained and updated it to match the app's existing patterns.</span>
+              </div>
+              <div class="case-meta mono">
+                <div>Southwest Airlines</div>
+                <div class="muted">Dev Lead / Sr. iOS</div>
+                <div class="muted">Sep 2024 – Present</div>
+              </div>
+            </a>
+            <a class="case" href="https://apps.apple.com/us/app/american-airlines/id382698565" target="_blank" rel="noopener">
+              <span class="case-num mono accent-sm">1.2</span>
+              <div class="case-main">
+                <span class="case-title">American's first promotional push notifications, and the controls to manage them</span>
+                <span class="secondary">Technical lead for promotional push messaging and for the Communications Preference Center, where customers choose which marketing they opt in to. Also lead iOS developer on Ready To Fly, which guided travelers through fast-changing COVID-era entry requirements.</span>
+              </div>
+              <div class="case-meta mono">
+                <div>American Airlines</div>
+                <div class="muted">Technical Lead / Sr. iOS</div>
+                <div class="muted">Aug 2019 – Sep 2024</div>
+              </div>
+            </a>
+            <a class="case case-media" href="https://apps.apple.com/us/app/azimuth-finance/id6773539916" target="_blank" rel="noopener">
+              <span class="case-num mono accent-sm">1.3</span>
+              <div class="case-main">
+                <span class="case-title">A wealth tracker for FIRE and Boglehead investors</span>
+                <span class="secondary">Designed and built solo, end to end: a universal SwiftUI app for iPhone, iPad, and Mac, and a Swift Vapor backend that normalizes data from multiple financial APIs.</span>
+              </div>
+              <div class="case-meta mono">
+                <div>Azimuth Finance</div>
+                <div class="muted">Side project · App Store</div>
+              </div>
+            </a>
+            <div class="shots" data-gallery>
+              <div class="phone">
+                <ul class="phone-screen" tabindex="0" aria-label="Azimuth Finance screenshots">
+                  <li data-caption="Portfolio"><img src="imgs/azimuth/01-portfolio-home.jpg" width="640" height="1386" alt="Azimuth Finance portfolio screen: a total of $421,936.93 above a line chart with time ranges from one day to max, followed by cash accounts with their balances and APY." loading="lazy"></li>
+                  <li data-caption="Holdings by account"><img src="imgs/azimuth/02-stock-account.jpg" width="640" height="1386" alt="Azimuth Finance holdings grouped by account type: a taxable brokerage account listing each stock with its share count, price, value, and daily change, then a tax-deferred IRA." loading="lazy"></li>
+                  <li data-caption="FI tracker"><img src="imgs/azimuth/03-fi-tracker.jpg" width="640" height="1386" alt="Azimuth Finance financial independence tracker: 24.10 years to financial independence, a progress ring at 5 percent, the income, savings, and return assumptions, and a net worth projection chart." loading="lazy"></li>
+                </ul>
+              </div>
+              <div class="shots-side mono" hidden>
+                <p class="shots-status" aria-live="polite"><span class="shots-current accent-sm">01</span> / 03 <span class="shots-caption muted">Portfolio</span></p>
+                <div class="shots-nav">
+                  <button type="button" class="shots-btn" data-dir="prev" aria-label="Previous screenshot">Prev</button>
+                  <button type="button" class="shots-btn" data-dir="next" aria-label="Next screenshot">Next</button>
+                </div>
+              </div>
+            </div>
+            <a class="case" href="https://apps.apple.com/us/app/vimeo/id425194759" target="_blank" rel="noopener">
+              <span class="case-num mono accent-sm">1.4</span>
+              <div class="case-main">
+                <span class="case-title">The Vimeo iOS app and player</span>
+                <span class="secondary">Two and a half years on the iOS, Player, and Video team, shipping features to the main iOS app and maintaining the player.</span>
+              </div>
+              <div class="case-meta mono">
+                <div>Vimeo</div>
+                <div class="muted">Applications Engineer</div>
+                <div class="muted">Jan 2014 – Jun 2016</div>
+              </div>
+            </a>
+          </div>
+        </section>
 
-			<div class="bioworld employer clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Bioworld</h3>
+        <section class="section">
+          <h2 class="section-label mono"><span class="accent-sm">02</span> Earlier work</h2>
+          <div class="section-body">
+            <div class="earlier"><span class="earlier-org">Overhead Door</span><span class="secondary">Designed and built an iOS app that controls residential and commercial garage door openers over Bluetooth LE, shared across two brands.</span></div>
+            <div class="earlier"><span class="earlier-org">Bioworld</span><span class="secondary">Rebuilt Foundmi, an app for tracking Bluetooth LE devices.</span></div>
+            <div class="earlier"><span class="earlier-org">Cratebind</span><span class="secondary">Lead iOS developer on Stricct Fitness, a subscription app built on StoreKit.</span></div>
+            <div class="earlier"><span class="earlier-org">Expand The Room</span><span class="secondary">iOS apps for ESPN, a mini game for GSN, and Unity games.</span></div>
+            <div class="earlier"><span class="earlier-org">LBi (now MRY)</span><span class="secondary">Creative technologist on work for Coca-Cola, the Olympics, and Johnson &amp; Johnson.</span></div>
+            <div class="earlier-shots">
+              <figure>
+                <a href="imgs/earlier/entranceband.jpg"><img src="imgs/earlier/entranceband.jpg" width="960" height="540" alt="Website for The Entrance Band: a black navigation bar across a black-and-white engraving of three overlapping circles, with the band's flame emblem at the center." loading="lazy"></a>
+                <figcaption class="mono">The Entrance Band <span class="muted">Band website</span></figcaption>
+              </figure>
+              <figure>
+                <a href="imgs/earlier/waltzwithbashir.jpg"><img class="crop-top" src="imgs/earlier/waltzwithbashir.jpg" width="960" height="540" alt="Website for the film Waltz with Bashir: the title in yellow over a dark, sepia illustrated street scene, with the synopsis and a drawn portrait of one of the film's subjects." loading="lazy"></a>
+                <figcaption class="mono">Waltz with Bashir <span class="muted">Film website</span></figcaption>
+              </figure>
+              <figure>
+                <a href="imgs/earlier/wackness.jpg"><img src="imgs/earlier/wackness.jpg" width="960" height="540" alt="Website for the film The Wackness: a graffiti title above a collage of the cast in bright cut-out shapes against an illustrated New York skyline." loading="lazy"></a>
+                <figcaption class="mono">The Wackness <span class="muted">Film website</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
 
-						<p>
-							Complete rebuild of Foundmi, an app used to track the location of connected bluetooth low energy(BLE) devices. 
-						</p>
+        <section id="about" class="section">
+          <h2 class="section-label mono"><span class="accent-sm">03</span> About</h2>
+          <div class="about-content">
+          <div class="about-body">
+            <p class="about-lead">I lead teams, shape architecture, and bring on-device AI into real products without sacrificing privacy or polish.</p>
+            <p class="secondary">I studied computer science before going to art school, where graphic design led me into web design and development, and from there to iOS. I still think like a designer. I've worked on campaigns for Coca-Cola and the Olympics, designed movie websites, built sites for major music artists, and made album art.</p>
+            <p class="mono muted skills">Swift / SwiftUI — Foundation Models — Architecture — Team leadership — Design systems</p>
+          </div>
+          <figure class="portrait">
+            <img src="painting.jpg" width="412" height="540" alt="Painting of Bruiser, a white pit bull with a brown eye patch, resting its head on a wooden ledge in front of a ship and factory smokestacks under a blue sky." loading="lazy">
+            <figcaption class="mono muted">Bruiser</figcaption>
+          </figure>
+          </div>
+        </section>
+      </main>
 
-						<p>
-							links: <br />
-							<a href="https://itunes.apple.com/us/app/foundmi/id1063636032?mt=8">Foundmi iOS app</a><br />
-							<a href="https://www.foundmi.com/">Foundmi website</a><br />
-							<a href="http://bioworldcorp.com/">Bioworld website</a><br />
-						</p>
-					</div>
+      <footer id="contact" class="site-footer">
+        <div class="footer-inner">
+          <h2 class="section-label mono"><span class="foot-accent">04</span> Contact</h2>
+          <div class="footer-body">
+            <a class="footer-email" href="mailto:chris@christopherlarsen.com">chris@christopherlarsen.com</a>
+            <nav class="mono footer-links" aria-label="Social">
+              <a href="https://github.com/cjlarsen" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/christopherlarsen" target="_blank" rel="noopener">LinkedIn</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
 
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_bioworld" href="img/galleries/bioworld/fm1.jpg">
-	 							<img class="thumb" src="img/galleries/bioworld/fm1.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="cratebind employer reverse clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Cratebind</h3>
-
-						<p>
-							Lead iOS developer on Stricct Fitness, a fitness and diet subscription based application utilizing StoreKit. 
-						</p>
-
-						<p>
-							links: <br />
-							<a href="https://cratebind.com//">Cratebind</a><br />
-							<a href="https://itunes.apple.com/us/app/stricct/id1046194205?mt=8">Stricct Fitness</a><br />
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_cratebind" href="img/galleries/cratebind/stricct.jpg">
-	 							<img class="thumb" src="img/galleries/cratebind/stricct.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="vimeo employer clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Vimeo</h3>
-
-						<p>
-							Worked as an Applications Engineer on the iOS, Player, and Video team.  I primarily worked on bug fixes and feature updates to the main iOS app.  I also maintained and updated all actionscript 3 portions of the player working under a Director of Engineering and coordinating with other members of the player team over the course of 2 and half years.    
-						</p>
-
-						<p>
-							links: <br />
-							<a href="https://itunes.apple.com/us/app/vimeo/id425194759?mt=8">Vimeo iOS app</a><br />
-							<a href="https://vimeo.com/player">The Vimeo Player</a><br />
-							<a href="https://vimeo.com/tools/widget/hubnut">Hubnut</a>
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_vimeo" href="img/galleries/vimeo/vim_iOS.jpg">
-	 							<img class="thumb" src="img/galleries/vimeo/vim_iOS.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="etr employer reverse clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Expand The Room</h3>
-
-						<p>
-							Worked in a team as a developer from May of 2012 to January of 2014 on various projects including Actionscript games, native iOS apps, Unity game development, and front end html/css/javascript. Projects included building a mini game for GSN's Deal or No Deal online slot machine game, updating iOS apps for ESPN, creating mobile website templates, and building in house iOS apps.
-						</p>
-
-						<p>
-							links: <br />
-							<a href="http://expandtheroom.com/">Expand The Room</a><br />
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_etr" href="img/galleries/etr/DOND_1.jpg">
-	 							<img class="thumb" src="img/galleries/etr/DOND_1.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="lbi employer clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>LBi (now MRY)</h3>
-
-						<p>
-							Part of a team of Creative Technologists from August 2010 to April 2012 building projects for a wide range of clients such as Coca-Cola, The Olympics, Johnson and Johnson, and William Grant &amp; Sons.
-						</p>
-
-						<p>
-							links: <br />
-							<a href="http://mry.com/">MRY (formerly LBi)</a><br />
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_lbi" href="img/galleries/lbi/BAApp.jpg">
-	 							<img class="thumb" src="img/galleries/lbi/BAApp.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="other employer reverse clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Other Past Employers</h3>
-
-						<p>
-							<span class='bold'>Warehouse Agency</span> - A start up focused mainly on luxury real estate and fashion.  Other projects included a green surfboard company and a iced tea company founded by the creator of Pirate's Booty.  Managed a small team while also developing and designing.
-						</p>
-
-						<p>
-							<span class='bold'>Universal Music Group and Halo Media</span> - Built and designed websites for major music artists.  Also built and designed websites for Independent films being published by Sony Classics.
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_other" href="img/galleries/other/steelpanther.jpg">
-	 							<img class="thumb" src="img/galleries/other/steelpanther.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="freelance employer clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Freelance Work</h3>
-
-						<p>
-							Created websites, album layouts, illustrations, t-shirt designs, iOS apps, and many other things for various clients over the years outside of my regular day job. 
-						</p>
-
-						<p>
-							links: <br />
-							<a href="http://graphicnaturerecords.com/">Graphic Nature Records</a><br />
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_freelance" href="img/galleries/freelance/entropy1.jpg">
-	 							<img class="thumb" src="img/galleries/freelance/entropy1.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="personal employer reverse clearfix">
-				<div class="container">
-					<div class="description">
-						<h3>Personal Projects</h3>
-
-						<p>
-							Worked on various personal projects including iOS apps, paintings, websites, my own programming language, crypto currency, cross platform libraries for mobile (C/C++), and really whatever else grabs my interest.  Most never get past the initial stages, but once in awhile it all comes together.
-						</p>
-
-						<p>
-							links: <br />
-							<a href="https://itunes.apple.com/us/app/strength-coach/id1196132564?mt=8">Strength Coach iOS App</a><br />
-						</p>
-					</div>
-
-					<div class="gallery">
-						<div class="project">
-	 						<a class="open_fancybox_personal" href="img/galleries/personal/sc.jpg">
-	 							<img class="thumb" src="img/galleries/personal/sc.jpg" alt=""/>
-	 						</a>
-	 					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<div class="footer">
-		<p>
-			<!-- copyright Christopher Larsen -->
-		</p>
-	</div>
-
-	<script src="js/openFancyBox.js"></script>
-
-</div>
+    </div>
+  </div>
 </body>
-
-	<script>
-		VANTA.WAVES({
-  			el: "#name-container",
-  			color: 0x222222,
-  			waveHeight: 15,
-  			shininess: 20,
-  			waveSpeed: 0.5
-		})
-	</script>	
-
 </html>

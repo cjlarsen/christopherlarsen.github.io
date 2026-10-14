@@ -1,0 +1,374 @@
+/* ------------------------------------------------------------------
+   Theme tokens. Light is the default; dark applies when
+   <html data-theme="dark"> is set (theme.js and the inline script
+   in index.html handle that).
+   ------------------------------------------------------------------ */
+:root {
+  --bg: #F6F5F1;
+  --ink: #111111;
+  --ink-2: #3D3A34;        /* secondary text */
+  --muted: #55524B;        /* labels, dates */
+  --hair: #C9C5BB;         /* light dividers */
+  --ph: #E6E2D8;           /* placeholder fill */
+  --accent: #C2241A;       /* large accent (headline) */
+  --accent-sm: #C2241A;    /* small accent text (labels, numbers) */
+  --hover: #C2241A;        /* link hover */
+  --foot-bg: #111111;
+  --foot-fg: #F6F5F1;
+  --foot-accent: #E8345B;
+
+  --serif: 'Newsreader', Georgia, serif;
+  --display: 'Instrument Serif', 'Newsreader', Georgia, serif;   /* hero headline only */
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #121211;
+  --ink: #EDEBE5;
+  --ink-2: #C2BEB4;
+  --muted: #9C978C;
+  --hair: #34322E;
+  --ph: #1F1E1B;
+  --accent: #D7163F;
+  --accent-sm: #E8345B;
+  --hover: #E8345B;
+  --foot-bg: #EDEBE5;
+  --foot-fg: #121211;
+  --foot-accent: #C2241A;
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a { color: var(--ink); }
+a:hover { color: var(--hover); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--hover); outline-offset: 3px; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.muted { color: var(--muted); }
+.secondary { color: var(--ink-2); }
+.accent { color: var(--accent); }
+.accent-sm { color: var(--accent-sm); }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* ------------------------------------------------------------------
+   Header
+   ------------------------------------------------------------------ */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 2px solid var(--ink);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; }
+.nav a { text-decoration: none; padding: 12px 0; }
+
+.theme-toggle, .shots-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+.theme-toggle:hover, .shots-btn:hover { color: var(--hover); border-color: var(--hover); }
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun { display: inline; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ------------------------------------------------------------------
+   Hero + intro
+   ------------------------------------------------------------------ */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  padding: 88px 0 72px;
+  border-bottom: 1px solid var(--ink);
+}
+.hero-meta { flex: 0 0 240px; line-height: 1.7; }
+.hero h1 {
+  flex: 999 1 640px;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 8.4vw, 7.8rem);
+  line-height: 0.97;
+  letter-spacing: -0.02em;
+}
+/* Keep the paired words in the headline together on one line. */
+.hero h1 .nowrap, .hero h1 em { white-space: nowrap; }
+
+.intro { display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 40px 0 96px; }
+.label-col { flex: 0 0 240px; }
+/* Same column split as the hero and the sections, so the intro text
+   lines up with the headline above and the work list below at every width. */
+.intro-body { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.lede { max-width: 760px; margin: 0; font-size: 23px; line-height: 1.45; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  text-decoration: none;
+}
+.btn-solid { background: var(--ink); color: var(--bg); }
+.btn-solid:hover { background: var(--hover); color: var(--bg); }
+.btn-outline { border: 1.5px solid var(--ink); }
+.btn-outline:hover { border-color: var(--hover); }
+
+/* ------------------------------------------------------------------
+   Sections
+   ------------------------------------------------------------------ */
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  padding: 24px 0 96px;
+  border-top: 2px solid var(--ink);
+}
+.section-label { flex: 0 0 240px; margin: 0; font-weight: 500; }
+.section-body { flex: 999 1 640px; min-width: 0; }
+
+.case {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--ink);
+  text-decoration: none;
+}
+.case:first-child { padding-top: 0; }
+.case-num { flex: 0 0 48px; }
+.case-main { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.case-title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.case:hover .case-title { color: var(--hover); }
+.case-meta { flex: 0 0 200px; line-height: 1.7; letter-spacing: 0.04em; }
+
+/* A row with screenshots: the gallery sits under the link, lines up with
+   the case title, and carries the row's bottom rule. */
+.case-media { padding-bottom: 28px; border-bottom: 0; }
+.shots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+  padding: 0 0 40px 80px;
+  border-bottom: 1px solid var(--ink);
+}
+/* Line-drawn phone. The one place corners are rounded: it is a drawing
+   of a device, not a button or card. */
+.phone {
+  flex: 0 0 auto;
+  width: 280px;
+  max-width: 100%;
+  padding: 9px;
+  border: 1.5px solid var(--ink);
+  border-radius: 46px;
+}
+.phone-screen {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  aspect-ratio: 640 / 1386;
+  background: #000;
+  border-radius: 36px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.phone-screen::-webkit-scrollbar { display: none; }
+.phone-screen:focus-visible { outline: 2px solid var(--hover); outline-offset: 3px; }
+.phone-screen li { flex: 0 0 100%; scroll-snap-align: start; }
+.phone-screen img { display: block; width: 100%; height: auto; }
+.shots-side {
+  flex: 1 1 200px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  letter-spacing: 0.04em;
+}
+.shots-side[hidden] { display: none; }
+.shots-status { margin: 0; }
+.shots-caption { display: block; }
+.shots-nav { display: flex; gap: 12px; }
+.shots-btn { min-width: 72px; justify-content: center; }
+.shots-btn:disabled { color: var(--muted); border-color: var(--hair); cursor: default; }
+
+/* Below this width the case title wraps under its number, so the
+   gallery moves to the left edge with it. */
+@media (max-width: 548px) {
+  .shots { padding-left: 0; }
+}
+
+.earlier {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.earlier:first-child { padding-top: 0; }
+.earlier-org { flex: 0 0 220px; font-weight: 600; }
+.earlier .secondary { flex: 1 1 360px; min-width: 0; }
+
+/* Stills of older web work under the list. The source images are 16:9
+   with black letterbox bars, so they are cropped to a shallower frame. */
+.earlier-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; padding-top: 40px; }
+.earlier-shots figure { min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.earlier-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 32 / 15;
+  object-fit: cover;
+  background: var(--ph);
+  border: 1px solid var(--hair);
+}
+.earlier-shots .crop-top { object-position: top; }
+.earlier-shots a { display: block; cursor: zoom-in; }
+.earlier-shots a:hover img { border-color: var(--hover); }
+.earlier-shots figcaption { letter-spacing: 0.04em; }
+.earlier-shots figcaption span { display: block; }
+@media (max-width: 548px) {
+  .earlier-shots { grid-template-columns: 1fr; }
+}
+
+/* Larger view of a still, opened by gallery.js. It is always dark (the
+   dialog carries data-theme="dark") so the letterbox bars in the source
+   images disappear into it. */
+.lightbox {
+  width: min(960px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  border: 1px solid var(--hair);
+  background: #000;
+  color: var(--ink);
+}
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.8); }
+.lightbox img { display: block; width: 100%; height: auto; }
+.lightbox-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  letter-spacing: 0.04em;
+}
+
+
+.about-content {
+  flex: 999 1 640px;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px 48px;
+}
+/* The painting sits beside the text until the column gets too narrow
+   for both (phone widths), then drops below at a capped size. */
+.about-body { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.about-body p { margin: 0; }
+.about-lead { font-size: 28px; line-height: 1.3; letter-spacing: -0.01em; }
+.skills { line-height: 1.8; letter-spacing: 0.04em; }
+.portrait {
+  flex: 0 1 320px;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ph);
+}
+
+/* ------------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------------ */
+.site-footer {
+  background: var(--foot-bg);
+  color: var(--foot-fg);
+  margin: 0 -24px;
+  padding: 72px 24px 48px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.footer-inner { display: flex; flex-wrap: wrap; gap: 24px 48px; }
+.site-footer .section-label { color: var(--foot-fg); }
+.foot-accent { color: var(--foot-accent); }
+.footer-body { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 40px; }
+.site-footer a { color: var(--foot-fg); }
+.site-footer a:hover { color: var(--foot-accent); }
+.footer-email {
+  font-size: clamp(1.8rem, 4.6vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  overflow-wrap: anywhere;
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 32px; }
+.footer-links a { padding: 12px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html, .phone-screen { scroll-behavior: auto; }
+  body, .site-footer { transition: none; }
+}
