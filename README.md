@@ -20,11 +20,3 @@ python3 -m http.server 8000
 
 then visit http://localhost:8000.
 
-## Still to fill in
-
-Search for `[` in `index.html` to find placeholders: the Southwest and American case studies,
-and the Overhead Door line.
-
-## Deploy
-
-Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages). Upload this folder as-is.
