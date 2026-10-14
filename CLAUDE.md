@@ -18,8 +18,10 @@ Keep it that way unless asked.
 - Section labels are small mono caps with a red number, e.g. `01 Selected work`.
   Sections, in order: 01 Selected work, 02 Earlier work, 03 About, 04 Contact.
   (A Writing section was removed on purpose — he isn't blogging. Don't add it back.)
-- Type: **Newsreader** (serif) for headlines and body; **IBM Plex Mono** for labels,
-  nav, buttons, and metadata. Both loaded from Google Fonts.
+- Type: **Newsreader** (serif) for headings and body; **IBM Plex Mono** for labels,
+  nav, buttons, and metadata. The hero headline alone is set in **Instrument Serif**,
+  larger than the old Newsreader headline — he tried a heavy Fraunces first and preferred
+  this; DM Serif Display and Bodoni Moda were also considered. All loaded from Google Fonts.
 - Square corners everywhere (no rounded buttons or cards). No gradients, no shadows,
   no emoji.
 - Exception to square corners: the line-drawn phone around the Azimuth screenshot gallery
@@ -70,12 +72,15 @@ Color decisions he made (keep them):
   iPhone, iPad, and Mac (one link covers all):
   https://apps.apple.com/us/app/azimuth-finance/id6773539916
   It does **not** have an AI feature yet — don't describe it as AI-powered.
-- The headline and About text currently mention on-device AI. He may soften this until
-  the AI feature ships in Azimuth; ask before changing it.
-- No text placeholders remain. The Southwest, American, and Vimeo rows still link to `#`
-  because there are no case study pages yet.
-- `resume.pdf` is exported from his résumé design and dropped into this folder; the
-  Résumé buttons link to it.
+- The headline says "local AI" (he wanted no hyphens in the headline, so "Staff level",
+  "local AI", and "well crafted" are deliberate); the About text still says "on-device AI".
+  He may soften the AI claim until the AI feature ships in Azimuth; ask before changing it.
+- No text placeholders remain. Every Selected work row links to its app on the App Store;
+  there are no separate case study pages. Rows 1.1, 1.2, and 1.4 show employment dates
+  taken from his résumé.
+- No résumé on the site, on purpose: he doesn't want a document with his personal details
+  downloadable, and anyone who needs it gets it from him directly. Don't add a Résumé
+  button or `resume.pdf` back.
 
 ## Working on the site
 

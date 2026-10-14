@@ -9,7 +9,6 @@ Static personal site — plain HTML, CSS, and a little JavaScript. No build step
 - `theme.js` — the light/dark toggle (remembers the visitor's choice; defaults to their system setting)
 - `favicon.svg` — the ghost mark
 - `painting.jpg` — painting in the About section
-- `resume.pdf` — **add this**: export the résumé from the canvas and drop it here
 
 ## Preview locally
 
